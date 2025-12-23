@@ -1,10 +1,11 @@
-version: '3.8'
+version: "3.8"
 
 services:
-  # 1. FastAPI 백엔드 앱 설정
   api:
-    build: .
     container_name: fastapi_app
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
     ports:
       - "8000:8000"
     env_file:
@@ -15,17 +16,14 @@ services:
       - mongodb
     restart: always
 
-  # 2. MongoDB 데이터베이스 설정
   mongodb:
     image: mongo:latest
     container_name: mongodb_container
     ports:
       - "27017:27017"
     volumes:
-      # 컨테이너를 삭제해도 데이터가 유지되도록 볼륨을 설정합니다.
       - mongo_data:/data/db
     restart: always
 
-# 데이터를 영구적으로 보존하기 위한 볼륨 정의
 volumes:
   mongo_data:
