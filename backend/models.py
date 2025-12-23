@@ -4,6 +4,7 @@ from typing import List, Optional
 class ProjectCreate(BaseModel):
     name: str
     language: str
+    description: Optional[str] = None
 
 class SessionCreate(BaseModel):
     problemId: int
