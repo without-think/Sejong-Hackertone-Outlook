@@ -1,0 +1,6 @@
+fastapi
+uvicorn[standard]
+msal
+requests
+motor
+python-dotenv
