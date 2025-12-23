@@ -3,7 +3,7 @@ version: '3.8'
 services:
   # 1. FastAPI 백엔드 앱 설정
   api:
-    build: .
+    build: ./backend
     container_name: fastapi_app
     ports:
       - "8000:8000"
