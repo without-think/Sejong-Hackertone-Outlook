@@ -4,7 +4,7 @@ from typing import List, Optional
 class ProjectCreate(BaseModel):
     name: str
     language: str
-    description: Optional[str] = None #
+    description: Optional[str] = None
 
 class SessionCreate(BaseModel):
     problemId: int
@@ -13,4 +13,8 @@ class SessionCreate(BaseModel):
     timeSpent: int
     submittedCode: str
     aiFeedback: Optional[str] = None
-    isSuccess: bool #
+    isSuccess: bool
+
+class User(BaseModel):
+    email: str
+    boj_handle: str | None = None
